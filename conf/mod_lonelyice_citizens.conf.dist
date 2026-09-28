@@ -1,0 +1,119 @@
+#
+# mod-lonelyice-citizens: Living capitals (city life).
+#
+# While a real player is in a capital zone, a few random bots of the city's faction become "citizens":
+# they stroll between banks, auction houses, mailboxes, inns and trainers, go AFK, sit, chat with each
+# other and fool around. Bots already in the city are taken first, the rest are teleported out of sight.
+# Citizens are released Citizens.ReleaseAfterSec after the last real player left the city.
+# Nothing is stored in the database. GM command: .citizen status | list [city] | test <city> |
+# release <name|city|all> | reload
+#
+
+[worldserver]
+
+########################################
+# Living capitals configuration
+########################################
+#
+#    Citizens.Enable
+#        Description: Master switch. 0 = nobody is recruited and current citizens are released.
+#        Default:     1 - (Enabled)
+#                     0 - (Disabled)
+#
+
+Citizens.Enable = 1
+
+#
+#    Citizens.Count.<City>
+#        Description: Citizens per capital while a real player is there ("not too many, not empty").
+#                     Cities: Stormwind, Ironforge, Darnassus, Exodar, Orgrimmar, ThunderBluff,
+#                     Undercity, Silvermoon, Shattrath, Dalaran (neutral cities recruit both factions).
+#
+
+Citizens.Count.Stormwind = 8
+Citizens.Count.Orgrimmar = 8
+Citizens.Count.Ironforge = 6
+Citizens.Count.Undercity = 6
+Citizens.Count.ThunderBluff = 5
+Citizens.Count.Darnassus = 5
+Citizens.Count.Exodar = 5
+Citizens.Count.Silvermoon = 5
+Citizens.Count.Shattrath = 3
+Citizens.Count.Dalaran = 3
+
+#
+#    Citizens.HomeRaceShare
+#        Description: Share of teleported recruits taken from the city's home races (Stormwind humans,
+#                     Ironforge dwarves + gnomes, Darnassus night elves, Exodar draenei, Orgrimmar orcs +
+#                     trolls, Thunder Bluff tauren, Undercity undead, Silvermoon blood elves).
+#        Default:     0.7
+#
+
+Citizens.HomeRaceShare = 0.7
+
+#
+#    Citizens.MinLevel
+#    Citizens.MinLevel.<City>
+#        Description: Minimum bot level. The per-city key overrides; Shattrath and Dalaran default to
+#                     max(Citizens.MinLevel, 58) and max(Citizens.MinLevel, 68).
+#        Default:     10
+#
+
+Citizens.MinLevel = 10
+Citizens.MinLevel.Shattrath = 58
+Citizens.MinLevel.Dalaran = 68
+
+#
+#    Citizens.ReleaseAfterSec
+#        Description: Seconds after the last real player left a capital before its citizens go back to
+#                     normal random-bot life (immediate random teleport for level when unseen).
+#        Default:     300
+#
+
+Citizens.ReleaseAfterSec = 300
+
+#
+#    Citizens.ManagerIntervalMs
+#        Description: Recruit / release / leash check period (world thread).
+#        Default:     10000
+#
+
+Citizens.ManagerIntervalMs = 10000
+
+#
+#    Citizens.RecruitPerTick
+#        Description: New citizens per city per manager tick (gradual, no spike).
+#        Default:     2
+#
+
+Citizens.RecruitPerTick = 2
+
+#
+#    Citizens.EmoteToPlayerCooldownSec
+#    Citizens.CityEmoteCooldownSec
+#        Description: A citizen emotes towards a real player (greeting) at most once per
+#                     EmoteToPlayerCooldownSec, and a whole city at most once per CityEmoteCooldownSec.
+#                     The same player is greeted by the same citizen at most once per 10 minutes.
+#        Default:     180, 45
+#
+
+Citizens.EmoteToPlayerCooldownSec = 180
+Citizens.CityEmoteCooldownSec = 45
+
+#
+#    Citizens.Weights
+#        Description: Relative weights of the next mood: stroll (walk to a point of interest and linger
+#                     there), afk (2-8 min), sit (1-4 min, tavern chair when near), social (talk to a
+#                     nearby bot), fool (dance or a silly emote).
+#        Default:     "stroll:45,afk:20,sit:10,social:15,fool:5"
+#
+
+Citizens.Weights = "stroll:45,afk:20,sit:10,social:15,fool:5"
+
+#
+#    Citizens.Debug
+#        Description: Log every recruit and release (logger "module").
+#        Default:     0
+#
+
+Citizens.Debug = 0

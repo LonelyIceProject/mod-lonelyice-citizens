@@ -1,0 +1,18 @@
+{
+  "format": 1,
+  "id": "lonelyice.citizens",
+  "version": "1.0.0",
+  "name": { "en": "Living capitals", "ru": "Жители городов" },
+  "description": {
+    "en": "Random bots live in the capitals while you are there: they stroll, rest, talk and greet you.",
+    "ru": "Случайные боты живут в столицах, пока вы там: гуляют, отдыхают, общаются и приветствуют вас."
+  },
+  "authors": [ "LonelyIceProject" ],
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://github.com/LonelyIceProject/mod-lonelyice-citizens",
+  "core": { "abi": "lonelyice-ac-1" },
+  "platforms": [ "windows-x64" ],
+  "depends": { "playerbots": ">=1.0.0" },
+  "server": { "library": "lonelyice_citizens" },
+  "config": "conf/mod_lonelyice_citizens.conf.dist"
+}
