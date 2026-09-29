@@ -14,5 +14,6 @@
   "platforms": [ "windows-x64" ],
   "depends": { "playerbots": ">=1.0.0" },
   "server": { "library": "lonelyice_citizens" },
-  "config": "conf/mod_lonelyice_citizens.conf.dist"
+  "config": "conf/mod_lonelyice_citizens.conf.dist",
+  "settings": "settings.json"
 }
