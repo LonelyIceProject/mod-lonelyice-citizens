@@ -1,7 +1,7 @@
 {
   "format": 1,
   "id": "lonelyice.citizens",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": { "en": "Living capitals", "ru": "Жители городов" },
   "description": {
     "en": "Random bots live in the capitals while you are there: they stroll, rest, talk and greet you.",
