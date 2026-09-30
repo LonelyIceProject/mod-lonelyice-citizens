@@ -40,6 +40,13 @@ The plugin is laid out in `bin/<config>/plugins/lonelyice.citizens/`. Copy that 
 
 `conf/mod_lonelyice_citizens.conf.dist`: `Citizens.Enable`, citizens per city (`Citizens.Count.<City>`),
 home race share, minimum levels, release delay and activity weights.
+## Support
+
+LonelyIce is free, with no ads and no paid features. If it is useful to you, you can
+[buy me a coffee](https://buymeacoffee.com/darthgelum): it pays for the server, code signing and development time.
+
+<a href="https://buymeacoffee.com/darthgelum"><img src=".github/buy-me-a-coffee.png" alt="Buy me a coffee" width="303"></a>
+
 ## License
 
 GNU General Public License v2.0 or later, see [LICENSE](LICENSE). Part of the
